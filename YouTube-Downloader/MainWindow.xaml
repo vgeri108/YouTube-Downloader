@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YouTube_Downloader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Youtube letöltés" Height="430" Width="700">
+    <Window.Background>
+        <ImageBrush ImageSource="/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    
+    <Grid Margin="10" Width="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock Text="URL" Grid.Row="0" Foreground="White"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBox Style="{DynamicResource TextBox3Corner}" x:Name="URL" Width="400"/>
+            <Button x:Name="Add" Content="Hozzáadás" Click="Add_Click" Style="{DynamicResource Button3Corner}" Margin="0,5,0,10"/>
+        </StackPanel>
+
+        <ListBox Style="{DynamicResource ListBox10Corner}" x:Name="VideoList" Grid.Row="2" Background="#7F000000" Foreground="White">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Törlés" Click="DeleteOne_Click"/>
+                    <MenuItem Header="Összes törlése" Click="DeleteAll_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+
+        <Button Style="{DynamicResource Button10Corner}" x:Name="Download"
+            Content="Letöltés"
+            Click="Download_Click"
+            Height="60"
+            Grid.Row="3"
+            Margin="0,10,0,0">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF562828" Offset="0.746"/>
+                    <GradientStop Color="#FFDA2E2E" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

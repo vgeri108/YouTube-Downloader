@@ -1,0 +1,25 @@
+﻿<Window x:Class="YouTube_Downloader.Progress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YouTube_Downloader"
+        mc:Ignorable="d"
+        Title="Folyamatok" Height="200" Width="450">
+    
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Aktuális letöltés:"/>
+            <ProgressBar x:Name="VideoProgress" Height="20"/>
+
+            <TextBlock Text="Összes letöltés:"/>
+            <ProgressBar x:Name="TotalProgressBar" Height="20"/>
+
+            <TextBlock x:Name="StatusText"
+                           Margin="0,10,0,0"
+                           Text="Feldolgozás folyamatban"/>
+            <TextBlock x:Name="SpeedText"/>
+            <TextBlock x:Name="TimeLeftText"/>
+        </StackPanel>
+    </Grid>
+</Window>
