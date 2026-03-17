@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Ookii.Dialogs.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
-using Ookii.Dialogs.Wpf;
 
 namespace YouTube_Downloader
 {
@@ -26,7 +28,11 @@ namespace YouTube_Downloader
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            AddToList();
+        }
 
+        private void AddToList()
+        {
             if (URL.Text == "")
                 return;
 
@@ -40,7 +46,6 @@ namespace YouTube_Downloader
             URL.Clear();
 
             _ = LoadVideoTitle(url, index);
-
         }
 
         async Task LoadVideoTitle(string url, int index)
@@ -239,6 +244,14 @@ namespace YouTube_Downloader
             catch { }
 
             return false;
+        }
+
+        private void URL_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddToList();
+            }
         }
     }
 }
