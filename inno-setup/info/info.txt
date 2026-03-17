@@ -1,6 +1,6 @@
  ---===### Youtube letöltő ###===---
 
-Verzió: Alpha 1.0
+Verzió: Alpha 1.1
 
 Ebben a verzióban még lehetnek váratlan nagy hibák is!
 
@@ -9,3 +9,6 @@ https://github.com/vgeri108/YouTube-Downloader/issues
 
 === Alap funkció ===
 Youtube videó letöltése videóként vagy hangként.
+
+=== Frissítés ===
+ => Videók listához adhatóak az enter lenyomásával
